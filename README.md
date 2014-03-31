@@ -12,6 +12,8 @@ http://en.wikipedia.org/wiki/Trie
 
 ## Directions
 
+Your mission is to make a web page that will show a user suggestions of all the words in the dictionary that begin with a prefix string. The user can enter any string into a text field and see suggestions appear underneath it. We've already given you a head start; now it's up to you to fill in the blanks.
+
 * In the lib directory, you'll find a trie class and a dictionary provided for you.
 * In lib/trie_builder, write a class method that builds all the dictionary words into a trie.
 * Add this method to your initializers (ask a CTCT team member to show you how to do it properly).
