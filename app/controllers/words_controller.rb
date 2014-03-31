@@ -9,7 +9,7 @@ class WordsController < ApplicationController
 			# as this functionality should really be delegated
 			# to a model ("fat models, skinny controllers"). 
 			# But we'll keep it here for clarity.
-			@suggestions = JSON.generate(suggestions: %w[fun fan fen])
+			@suggestions = JSON.generate(suggestions: [])
       format.json {render json: @suggestions}
     end
 	end
