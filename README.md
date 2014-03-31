@@ -17,3 +17,5 @@ http://en.wikipedia.org/wiki/Trie
 * Add this method to your initializers (ask a CTCT team member to show you how to do it properly).
 * In app/assets/javascripts/index.js, you'll find the AJAX function that searches for autocomplete suggestions on a keypress. You don't need to change it, but you should definitely take a close look at it.
 * In words_controller.rb, write a controller action called 'complete' that takes a string and looks up completed word suggestions in the trie. AJAX calls from the front end will hit this endpoint.
+
+Please don't hesitate to ask a team member for help at any time!
