@@ -17,7 +17,7 @@ class Trie
   def insert(word)
     node = self
     word.each_char do |char|
-      node.add char if not node.children.has_key? char
+      node.add(char) if not node.children.has_key?(char)
       node = node.children[char]
     end
     node.word_end = true
@@ -26,7 +26,7 @@ class Trie
   def find(word)
     node = self
     word.each_char do |char|
-      return nil if not node.children.has_key? char
+      return nil if not node.children.has_key?(char)
       node = node.children[char]
     end
     return node.value
@@ -34,13 +34,13 @@ class Trie
   
   def all_prefixes
     results = []
-    results.push value if word_end
+    results.push(value) if word_end
     return results if children.empty?
     
     ap = children.values.collect {|node| node.all_prefixes}
     
     reduced = ap.reduce {|a,b| a.merge b}
-    reduced or results
+    reduced || results
   end
   
   def autocomplete(prefix)

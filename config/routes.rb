@@ -1,5 +1,6 @@
 TrieToComplete::Application.routes.draw do
   root :to => 'words#index'
+  get '/complete' => 'words#complete'
 
   # The priority is based upon order of creation:
   # first created -> highest priority.

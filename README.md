@@ -1,4 +1,4 @@
-# Trie to Complete
+# Trie to Complete This!
 
 A short exercise using a trie in Rails.
 
@@ -6,7 +6,11 @@ A short exercise using a trie in Rails.
 
 http://en.wikipedia.org/wiki/Trie
 
-## What am I supposed to do with this?
+* A trie is a specialized tree data structure that, much like a hash table, stores key/value pairs where the keys are any sequence of characters. Take a look at the image on Wikipedia.
+
+* You can see that every key has a unique traversal through the trie. You can traverse down the trie to check for the presence or absence of a sequence of characters in the data set that the trie represents.
+
+## Directions
 
 * In the lib directory, you'll find a trie class and a dictionary provided for you.
 * In lib/trie_builder, write a class method that builds all the dictionary words into a trie.
