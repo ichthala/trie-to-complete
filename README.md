@@ -12,4 +12,4 @@ http://en.wikipedia.org/wiki/Trie
 * In lib/trie_builder, write a class method that builds all the dictionary words into a trie.
 * Add this method to your initializers (ask a CTCT team member to show you how to do it properly).
 * In app/assets/javascripts/index.js, you'll find the AJAX function that searches for autocomplete suggestions on a keypress. You don't need to change it, but you should definitely take a close look at it.
-* In words_controller.rb, write a controller action called 'index' that takes a string and looks up completed word suggestions in the trie. AJAX calls from the front end will hit this endpoint.
+* In words_controller.rb, write a controller action called 'complete' that takes a string and looks up completed word suggestions in the trie. AJAX calls from the front end will hit this endpoint.

@@ -1,24 +1,54 @@
-class WordTrie
+require 'set'
+class Trie
 
-  def initialize
-    @root = Hash.new
+  attr_accessor :children, :value, :word_end
+
+  def initialize(value=nil)
+    @children = {}
+    @value = value
+    @word_end = false #word_end to represent that a word ends at this node
   end
-
-  def build(str)
-    node = @root
-    str.each do |char|
-      node[char] ||= Hash.new
-      node = node[char]
+  
+  def add(char)
+    val = value ? value + char : char
+    children[char] = Trie.new(val)
+  end
+  
+  def insert(word)
+    node = self
+    word.each_char do |char|
+      node.add char if not node.children.has_key? char
+      node = node.children[char]
     end
-    node[:end] = true
+    node.word_end = true
   end
-
-  def find(str)
-    node = @root
-    str.each do |char|
-      return nil unless node = node[char]
+  
+  def find(word)
+    node = self
+    word.each_char do |char|
+      return nil if not node.children.has_key? char
+      node = node.children[char]
     end
-    node[:end] && true
+    return node.value
   end
-
+  
+  def all_prefixes
+    results = []
+    results.push value if word_end
+    return results if children.empty?
+    
+    ap = children.values.collect {|node| node.all_prefixes}
+    
+    reduced = ap.reduce {|a,b| a.merge b}
+    reduced or results
+  end
+  
+  def autocomplete(prefix)
+    node = self
+    prefix.each_char do |char|
+      return [] if not node.children.has_key? char
+      node = node.children[char]
+    end
+    return node.all_prefixes
+  end
 end
