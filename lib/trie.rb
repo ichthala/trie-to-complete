@@ -32,12 +32,12 @@ class Trie
     return node.value
   end
   
-  def all_prefixes
+  def all_suggestions
     results = []
     results.push(value) if word_end
     return results if children.empty?
     
-    ap = children.values.collect {|node| node.all_prefixes}
+    ap = children.values.collect {|node| node.all_suggestions}
     
     reduced = ap.reduce {|a,b| a.merge b}
     reduced || results
@@ -49,6 +49,6 @@ class Trie
       return [] if not node.children.has_key? char
       node = node.children[char]
     end
-    return node.all_prefixes
+    return node.all_suggestions
   end
 end
