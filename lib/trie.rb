@@ -37,9 +37,9 @@ class Trie
     results.push(value) if word_end
     return results if children.empty?
     
-    ap = children.values.collect {|node| node.all_suggestions}
+    as = children.values.collect {|node| node.all_suggestions}
     
-    reduced = ap.reduce {|a,b| a.merge b}
+    reduced = as.reduce {|a,b| a.merge b}
     reduced || results
   end
   
