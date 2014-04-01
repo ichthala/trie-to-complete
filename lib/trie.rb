@@ -33,14 +33,14 @@ class Trie
   end
   
   def all_suggestions
-    results = []
-    results.push(value) if word_end
+    results = Set.new
+    results.add value if flag
     return results if children.empty?
     
     as = children.values.collect {|node| node.all_suggestions}
     
     reduced = as.reduce {|a,b| a.merge b}
-    reduced || results
+    reduced or results
   end
   
   def autocomplete(prefix)
