@@ -1,4 +1,4 @@
-require 'trie_builder'
+require 'dictionary'
 
 class WordsController < ApplicationController
 	def index
