@@ -1,3 +1,5 @@
+require 'trie_builder'
+
 class WordsController < ApplicationController
 	def index
 	end
