@@ -34,7 +34,7 @@ class Trie
   
   def all_suggestions
     results = Set.new
-    results.add value if flag
+    results.add value if word_end
     return results if children.empty?
     
     as = children.values.collect {|node| node.all_suggestions}
