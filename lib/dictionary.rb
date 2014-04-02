@@ -21,7 +21,7 @@ private
 	def populate(filepath)
 		t = Trie.new
 		File.open(filepath).each do |word|
-			t.insert(word)
+			t.insert(word.strip)
 		end
 		t
 	end
