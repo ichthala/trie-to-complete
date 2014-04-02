@@ -6,7 +6,7 @@ class WordsController < ApplicationController
 
 	def complete
 		respond_to do |format|
-			# Get all suggestions from the trie here!
+			# Get all suggestions from the dictionary here!
       format.json {render json: suggestions}
     end
 	end
