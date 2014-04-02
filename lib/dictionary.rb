@@ -4,7 +4,7 @@ module Dictionary
 
 	extend self
 
-	def populate(filepath)
+	def build_dictionary
 	end
 
 	def match_words(prefix)
@@ -12,7 +12,10 @@ module Dictionary
 
 private
 
-	def trie_from_system_dictionary(filepath)
+	def trie_from_system_dictionary
+	end
+
+	def populate(filepath)
 	end
 
 end
