@@ -30,6 +30,6 @@ Your mission is to make a web page that will show a user suggestions of all the 
 
 Please don't hesitate to ask a team member for help at any time!
 
-If you'd like a further challenge, ask Alice.
+If you'd like a further challenge, ask Alice. You can email her after the meetup at alicemottola(at)gmail.com with any questions.
 
 The trie used in this exercise is slightly modified from the one found [here](https://github.com/vivekn/autocomplete). Thanks, vivekn and friends!
